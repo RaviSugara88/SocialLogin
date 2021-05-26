@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SocialLogin</string>
+
+    <string name="facebook_app_id">281744229989739</string>
+    <string name="fb_login_protocol_scheme">fb281744229989739</string>
+    <string name="user_name">User Name</string>
+    <string name="email">Email</string>
+
+</resources>

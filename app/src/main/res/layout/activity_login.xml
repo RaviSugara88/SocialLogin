@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+   <data>
+       <variable
+           name="loginViewModel"
+           type="com.ravisugara.sociallogin.ui.login.LoginViewModel" />
+       <import type="android.view.View"/>
+
+   </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#232222"
+        android:gravity="center"
+        tools:context=".ui.login.LoginActivity">
+
+        <!--android:visibility="@{user.firstName != null ? View.VISIBLE: View.GONE}-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/facebook_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-10dp"
+            android:onClick="@{()->loginViewModel.facebookLogin()}"
+            android:visibility="@{loginViewModel.viewLayDetail ? View.GONE : View.VISIBLE}"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/ic_facebook_login" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/google_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/facebook_login"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-10dp"
+            android:onClick="@{()-> loginViewModel.googleLogin()}"
+            android:visibility="@{loginViewModel.viewLayDetail ? View.GONE : View.VISIBLE}"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/ic_google_login" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/google_login"
+            android:orientation="vertical"
+            android:visibility="@{loginViewModel.viewLayDetail ? View.VISIBLE : View.GONE}" >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="@string/user_name"
+                android:id="@+id/user_name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:text="@{loginViewModel.name}"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="@string/email"
+                android:id="@+id/email">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:text="@{loginViewModel.email}"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_logout"
+                android:onClick="@{()-> loginViewModel.logOut()}"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
