@@ -2,10 +2,6 @@ package com.ravisugara.sociallogin.uital
 
 object Key {
     const val PREF_KEY = "MyKey"
-    const val ENCRYPTION_DECRYPTION_KEY = "7061737323313233"
-    const val BASE_URL = "https://mscore.stagingsdei.com:9149/"
-    const val BASE_URL_MEONLY = "https://api.sandbox.meonly.co/"
-    const val BASE_URL_1UPHEALTH = "https://system-search.1up.health/"
     const val IMAGE_PATH_VACCINATION_DOC = "image_path"
     const val EMAIL_MEONLY = "userEmailMeonly"
     const val MOBILE_NUMBER = "user_phone"
@@ -26,14 +22,7 @@ object Key {
     const val FILE_PROVIDER = "com.sdei.checkmate.FileProvider"
     const val FILE_NAME ="file"
     const val FILE_NAME_MULTI ="image[]"
-    const val SHOT_1 ="shot_1"
-    const val SHOT_2 ="shot_2"
-    const val SHOT_3 ="shot_3"
-    const val DOSE13 ="1/3"
-    const val DOSE23 ="2/3"
-    const val DOSE33 ="3/3"
-    const val DOSE21 ="1/2"
-    const val DOSE22 ="2/2"
+
     const val DOSE11 ="1/1"
     const val DASH ="-"
     //  const val userPhone2 ="user_phoneee"

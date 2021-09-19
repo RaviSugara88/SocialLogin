@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.ravisugara.sociallogin">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -9,16 +10,24 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialLogin">
-        <activity android:name=".GoogleActivity">
 
-        </activity>
-        <activity android:name=".RegistationActivity" />
+        <activity android:name=".ui.registation.RegistationActivity" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +40,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="@string/fb_login_protocol_scheme" />
+                <data
+                    android:scheme="https"
+                    android:host="ravisugara.page.link" />
+                <data
+                    android:scheme="http"
+                    android:host="ravisugara.page.link" />
             </intent-filter>
         </activity>
 

@@ -15,8 +15,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#232222"
-        android:gravity="center"
         tools:context=".ui.login.LoginActivity">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_share_24"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/shareLink"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="50dp"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
 
         <!--android:visibility="@{user.firstName != null ? View.VISIBLE: View.GONE}-->
         <com.google.android.material.imageview.ShapeableImageView
@@ -24,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="-10dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
             android:onClick="@{()->loginViewModel.facebookLogin()}"
             android:visibility="@{loginViewModel.viewLayDetail ? View.GONE : View.VISIBLE}"
             android:layout_marginStart="16dp"
@@ -36,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/facebook_login"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
             android:layout_marginStart="16dp"
             android:layout_marginTop="-10dp"
             android:onClick="@{()-> loginViewModel.googleLogin()}"
@@ -61,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:enabled="false"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:text="@{loginViewModel.name}"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -75,7 +92,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:enabled="false"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:text="@{loginViewModel.email}"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -89,6 +106,7 @@
                 android:background="@android:color/transparent"/>
 
         </LinearLayout>
+    </RelativeLayout>
 
     </RelativeLayout>
 

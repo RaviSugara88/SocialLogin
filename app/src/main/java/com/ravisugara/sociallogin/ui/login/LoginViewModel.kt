@@ -3,9 +3,7 @@ package com.ravisugara.sociallogin.ui.login
 import android.app.Application
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.facebook.AccessToken
 import com.facebook.AccessTokenTracker
@@ -25,9 +23,9 @@ class LoginViewModel(val app:Application) :AndroidViewModel(app)  {
     private val startGoogleLogout = MutableLiveData<Boolean>()
     private val _name = MutableLiveData("")
     private val _email = MutableLiveData("")
-    private val _viewLayDetail = MutableLiveData(false)
-    val name: LiveData<String> = _name
-    val email: LiveData<String> = _email
+   // private val _viewLayDetail = MutableLiveData(false)
+    val name: MutableLiveData<String> = _name
+    val email: MutableLiveData<String> = _email
     val viewLayDetail:MutableLiveData<Boolean> = MutableLiveData()
 
     fun startLoginFacebook():MutableLiveData<Boolean>{

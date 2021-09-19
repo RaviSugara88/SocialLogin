@@ -68,7 +68,14 @@ dependencies {
     //facebook Sdk
     implementation 'com.facebook.android:facebook-login:4.42.0'
     //firebase
+
+    implementation 'com.google.firebase:firebase-dynamic-links:20.1.1'
+
+    // firebase kotlin dynamic link
     implementation platform('com.google.firebase:firebase-bom:26.8.0')
+    implementation 'com.google.firebase:firebase-dynamic-links-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
     kapt 'androidx.databinding:databinding-compiler:4.1.3'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
